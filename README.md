@@ -1,66 +1,61 @@
-## Foundry
+# Foundry DAO Governance
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+- [Foundry DAO Governance](#foundry-dao-governance)
+- [Getting Started](#getting-started)
+  - [Requirements](#requirements)
+  - [Quickstart](#quickstart)
+    - [Optional Gitpod](#optional-gitpod)
+- [Usage](#usage)
+  - [Test](#test)
+  - [Estimate gas](#estimate-gas)
+- [Formatting](#formatting)
 
-Foundry consists of:
+# Getting Started
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## Requirements
 
-## Documentation
+- [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+  - You'll know you did it right if you can run `git --version` and you see a response like `git version x.x.x`
+- [foundry](https://getfoundry.sh/)
+  - You'll know you did it right if you can run `forge --version` and you see a response like `forge 0.2.0 (816e00b 2023-03-16T00:05:26.396218Z)`
 
-https://book.getfoundry.sh/
+## Quickstart
 
-## Usage
-
-### Build
-
-```shell
-$ forge build
+```
+git clone https://github.com/Cyfrin/foundry-dao-f23
+cd foundry-dao-f23
+forge install openzeppelin/openzeppelin-contracts
+forge build
 ```
 
-### Test
+### Optional Gitpod
 
-```shell
-$ forge test
+If you can't or don't want to run and install locally, you can work with this repo in Gitpod. If you do this, you can skip the `clone this repo` part.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#github.com/PatrickAlphaC/foundry-dao-f23)
+
+# Usage
+
+## Test
+
+```
+forge test
 ```
 
-### Format
+## Estimate gas
 
-```shell
-$ forge fmt
+You can estimate how much gas things cost by running:
+
+```
+forge snapshot
 ```
 
-### Gas Snapshots
+And you'll see and output file called `.gas-snapshot`
 
-```shell
-$ forge snapshot
+# Formatting
+
+To run code formatting:
+
 ```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
+forge fmt
 ```
